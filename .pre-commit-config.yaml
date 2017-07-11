@@ -1,0 +1,16 @@
+-   repo: git://github.com/pre-commit/pre-commit-hooks
+    sha: 46251c9523506b68419aefdf5ff6ff2fbc4506a4
+    hooks:
+    -   id: autopep8-wrapper
+    -   id: check-added-large-files
+    -   id: check-case-conflict
+    -   id: check-json
+    -   id: check-merge-conflict
+    -   id: check-yaml
+    -   id: debug-statements
+    -   id: detect-private-key
+    -   id: double-quote-string-fixer
+    -   id: end-of-file-fixer
+    -   id: forbid-new-submodules
+    -   id: requirements-txt-fixer
+    -   id: trailing-whitespace
