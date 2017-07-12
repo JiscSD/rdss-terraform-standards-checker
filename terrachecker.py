@@ -25,11 +25,10 @@ class TerraformChecker(object):
             })
         return ret
 
-    def check(self):
+    def validate(self):
         """Checks the Terraform configs."""
-        print(self.walks)
-
-        for walk in walks:
+        import pdb; pdb.set_trace()
+        for walk in self.walks:
             root = walk['root']
             subdirs = walk['subdirs']
             files = walk['files']
@@ -39,16 +38,18 @@ class TerraformChecker(object):
 
     def _check_file(self, file_path):
         """Loop through and validates list of files."""
-        for file_name in files:
-            full_path = root + file_name
-            for error in self._root_tf_file_errors(full_path):
-                self.errors.append(self._error_dict(full_path, error))
+
+        self.errors.extend(self._root_tf_file_errors(file_path))
 
     def _root_tf_file_errors(self, path):
         """Check the root terraform and return a list of errors or None."""
 
+        ret = []
+
         # Check module names do not contain resource with hyphen.
         with open(path) as f:
+            obj = hcl.load(f)
+            import pdb; pdb.set_trace()
 
         return []
 
@@ -66,4 +67,5 @@ class TerraformChecker(object):
 
 
 checker = TerraformChecker('sample-terraform/')
-checker.check()
+checker.validate()
+print(checker.errors)
