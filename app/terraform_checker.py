@@ -18,6 +18,8 @@ class TerraformChecker(object):
         ret = []
         for root, subdirs, files in os.walk(root_path):
             for file_name in files:
+                if '.terraform' in root:
+                    continue
                 if file_name.endswith('.tf'):
                     root_path = self._ensure_trailing_slash(root)
                     full_path = root_path + file_name
@@ -65,7 +67,7 @@ class TerraformChecker(object):
     def _validate_tf_section_names(self, file_path, hcl_obj):
         """Check that tf module, resource, variable, etc... names are valid."""
         for section, v in hcl_obj.items():
-            if section == 'resource':
+            if section in ['resource', 'data']:
                 self._validate_tf_section_names(file_path, hcl_obj[section])
                 continue
             for name, v2 in hcl_obj[section].items():
@@ -87,7 +89,6 @@ class TerraformChecker(object):
                     'path name. Place all modules in a subdirectory called '
                     '"modules".'.format(k)
                 )
-
 
     def _ensure_trailing_slash(self, root):
         """Ensures the given path has a trailing slash."""
