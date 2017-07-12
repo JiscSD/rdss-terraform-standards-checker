@@ -59,17 +59,35 @@ class TerraformChecker(object):
                 return
 
             self._validate_tf_section_names(file_path, obj)
+            if 'module' in obj:
+                self._validate_tf_module(file_path, obj['module'])
 
     def _validate_tf_section_names(self, file_path, hcl_obj):
         """Check that tf module, resource, variable, etc... names are valid."""
         for section, v in hcl_obj.items():
+            if section == 'resource':
+                self._validate_tf_section_names(file_path, hcl_obj[section])
+                continue
             for name, v2 in hcl_obj[section].items():
                 if '-' in name:
                     self._add_error(
                         file_path,
                         '{} "{}" contains a "-" in the name. Use '
-                        '"_" instead.'.format(section.capitalize(), name)
+                        '"_" instead.'.format(section, name)
                     )
+
+    def _validate_tf_module(self, file_path, hcl_modules):
+        """Validate a terraform module reference."""
+        for k, v in hcl_modules.items():
+            source = hcl_modules[k]['source']
+            if source.startswith('./') and 'modules' not in source:
+                self._add_error(
+                    file_path,
+                    'Module {} source does not contain "modules" in the '
+                    'path name. Place all modules in a subdirectory called '
+                    '"modules".'.format(k)
+                )
+
 
     def _ensure_trailing_slash(self, root):
         """Ensures the given path has a trailing slash."""
