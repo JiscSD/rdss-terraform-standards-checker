@@ -5,11 +5,11 @@ resource "aws_iam" "test" {
   name = "Test"
 }
 
-resource "something" "invalid-name" {
+resource "something" "invalid_name" {
   name = "test"
 }
 
-module "some-module" {
+module "some_module" {
   // Test
   source            = "./modules/kinesis"
   stream_name       = "institution_${var.jisc_id}_input_${terraform.env}"

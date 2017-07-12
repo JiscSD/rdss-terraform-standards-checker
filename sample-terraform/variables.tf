@@ -1,0 +1,3 @@
+variable "abacus" {
+  default = "lol"
+}
