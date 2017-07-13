@@ -1,8 +1,9 @@
-import logging
+#!/usr/bin/env python
+
 import argparse
 import sys
 
-from app import TerraformChecker
+from terraform_checker import TerraformChecker
 
 
 def main():
@@ -24,8 +25,8 @@ def parse_args():
     """Setup the argument parser."""
     parser = argparse.ArgumentParser()
     parser.add_argument(
-        "terraform_path",
-        help="Path to directory containing Terraform configs."
+        'terraform_path',
+        help='Path to directory containing Terraform configs.'
     )
     return parser.parse_args()
 
