@@ -3,7 +3,7 @@
 import argparse
 import sys
 
-from terraform_checker import TerraformChecker
+from terrachecker.terraform_checker import TerraformChecker
 
 
 def main():

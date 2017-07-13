@@ -1,7 +1,9 @@
 #!/usr/bin/env python
 
-from distutils.core import setup
+from setuptools import setup, find_packages
 
+
+print(find_packages())
 
 setup(
     name='terrachecker',
@@ -10,5 +12,14 @@ setup(
     author='Mark Winterbottom',
     author_email='mark.winterbottom@jisc.ac.uk',
     url='https://github.com/JiscRDSS/rdss-terraform-standards-checker',
-    packages=['terrachecker'],
+    packages=find_packages(),
+    include_package_data=True,
+    entry_points={
+        'console_scripts': [
+            'kaizen=terrachecker.terrachecker:main'
+        ]
+    },
+    install_requires=[
+        'pyhcl==0.3.5'
+    ]
 )

@@ -22,4 +22,7 @@ lint:
 		--all-files \
 		--verbose
 
-.PHONY: deps* lint
+clean:
+	@find . -name '__pycache__' | xargs rm -rf
+
+.PHONY: deps* clean lint
