@@ -22,7 +22,16 @@ lint:
 		--all-files \
 		--verbose
 
+autopep8:
+	@autopep8 . --exclude env --recursive --in-place --pep8-passes 2000 --verbose
+
+autopep8-stats:
+	@pep8 --quiet --statistics .
+
+test:
+	@pytest
+
 clean:
 	@find . -name '__pycache__' | xargs rm -rf
 
-.PHONY: deps* clean lint
+.PHONY: deps* clean lint test autopep8*
