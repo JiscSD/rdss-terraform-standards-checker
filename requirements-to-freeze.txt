@@ -1,3 +1,4 @@
-virtualenv
 pre-commit
 pyhcl
+pytest
+virtualenv
