@@ -16,7 +16,7 @@ setup(
     include_package_data=True,
     entry_points={
         'console_scripts': [
-            'kaizen=terrachecker.terrachecker:main'
+            'terrachecker=terrachecker.terrachecker:main'
         ]
     },
     install_requires=[
