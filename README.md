@@ -5,15 +5,15 @@ A script which checks Terraform configs against the standards described here: ht
 
 To configure a project to use `terracheck` follow these steps:
 
-Install Terracheck:
+ 1) Install Terracheck:
 
 ```
 pip install -e git+git@github.com:JiscRDSS/rdss-terraform-standards-checker.git@develop#egg=terrachecker
 ```
 
-Or simple add `git+git@github.com:JiscRDSS/rdss-terraform-standards-checker.git@develop#egg=terrachecker` to *requirements.txt*.
+Or simple add `git+git@github.com:JiscRDSS/rdss-terraform-standards-checker.git@develop#egg=terrachecker` to *requirements.txt* of your project.
 
-Run Terracheck:
+ 2) Run Terracheck:
 
 ```
 terracheck infra/
