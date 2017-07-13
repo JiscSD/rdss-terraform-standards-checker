@@ -7,16 +7,13 @@ from terrachecker.terraform_checker import TerraformChecker
 
 
 def main():
-    """Main function"""
-
+    """Script entrypoint."""
     args = parse_args()
-
     checker = TerraformChecker(args.terraform_path)
     if not checker.is_valid():
         for error in checker.validation_errors:
             print('{}: {}'.format(error['path'], error['error']))
         sys.exit(1)
-
     print('[OK] Terraform looking good.')
     sys.exit(0)
 

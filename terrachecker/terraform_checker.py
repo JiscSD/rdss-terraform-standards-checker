@@ -3,18 +3,18 @@ import hcl
 
 
 class TerraformChecker(object):
-    """Terraform checking class."""
+    """Terraform checker."""
 
     tf_file_paths = []
     validation_errors = []
 
     def __init__(self, root_path):
-        """Read the Terraform from the provided path."""
+        """Read the Terraform configs from the provided path."""
         self.validation_errors = []
         self.tf_file_paths = self._get_tf_file_paths(root_path)
 
     def _get_tf_file_paths(self, root_path):
-        """List paths for all the Terraform files to check."""
+        """Retrieve paths for all the Terraform files to check."""
         ret = []
         for root, subdirs, files in os.walk(root_path):
             for file_name in files:
@@ -28,21 +28,17 @@ class TerraformChecker(object):
         return ret
 
     def is_valid(self):
-        """Validates Terraform config and returns True if pass else False"""
-
+        """Validate Terraform configs and return True if pass else False"""
         for file_path in self.tf_file_paths:
             self._validate_tf_file(file_path)
             self._validate_tf_file_name(file_path)
-
         if len(self.validation_errors) > 0:
             return False
         return True
 
     def _validate_tf_file_name(self, file_path):
-        """Check tf file name is either main.tf, output.tf or variables.tf."""
-
+        """Check tf file name is valid."""
         file_name = file_path.split('/')[-1]
-
         if file_name not in ['main.tf', 'variables.tf', 'outputs.tf']:
             self._add_error(
                 file_path,
@@ -52,7 +48,6 @@ class TerraformChecker(object):
 
     def _validate_tf_file(self, file_path):
         """Load Terraform file at given path and validate."""
-
         with open(file_path) as f:
             try:
                 obj = hcl.load(f)
