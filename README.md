@@ -19,7 +19,7 @@ Or simple add `git+git@github.com:JiscRDSS/rdss-terraform-standards-checker.git@
 terracheck infra/
 ```
 
-**Note: Replace `infra/` with path to Terraform configs.**
+*Note: Replace `infra/` with path to Terraform configs.*
 
 ## Development
 
