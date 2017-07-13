@@ -3,9 +3,9 @@ A script which checks Terraform configs against the standards described here: ht
 
 ## Usage
 
-To configure a project to use `terracheck` follow these steps:
+To configure a project to use `terrachecker` follow these steps:
 
- 1) Install Terracheck:
+ 1) Install Terrachecker:
 
 ```
 pip install -e git+git@github.com:JiscRDSS/rdss-terraform-standards-checker.git@develop#egg=terrachecker
@@ -13,10 +13,10 @@ pip install -e git+git@github.com:JiscRDSS/rdss-terraform-standards-checker.git@
 
 Or simple add `git+git@github.com:JiscRDSS/rdss-terraform-standards-checker.git@develop#egg=terrachecker` to *requirements.txt* of your project.
 
- 2) Run Terracheck:
+ 2) Run Terrachecker:
 
 ```
-terracheck infra/
+terrachecker infra/
 ```
 
 *Note: Replace `infra/` with path to Terraform configs.*
