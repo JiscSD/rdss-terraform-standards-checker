@@ -16,6 +16,7 @@ def main():
             print('{}: {}'.format(error['path'], error['error']))
         sys.exit(1)
 
+    print('[OK] Terraform looking good.')
     sys.exit(0)
 
 
