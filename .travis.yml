@@ -8,9 +8,10 @@ script:
 - make lint
 - make test
 deploy:
-  provider: pypitest
+  provider: pypi
   user: "MarkJisc"
   distributions: sdist bdist_wheel
+  server: https://testpypi.python.org/pypi
   on:
     branch: develop
   password:
