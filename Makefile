@@ -40,4 +40,4 @@ pypi-push:
 clean:
 	@find . -name '__pycache__' | xargs rm -rf
 
-.PHONY: deps* clean lint test autopep8* build
+.PHONY: deps* clean lint test autopep8* build pypi-push
