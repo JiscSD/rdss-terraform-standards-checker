@@ -12,9 +12,9 @@ script:
 
 deploy:
   provider: pypi
-  server: https://pypi.python.org/pypi
   user: MarkJisc
   password:
     secure: q3g/WsM//iJWLiXqxlgX0lViYDXEcUwh90x3Z3blhuLtNZRYht9J75MXEb4Tp8LESfIlabvtfJfw4/jv9WJQHMNBxMDxhYOWRD+0ZR6sSHxs4E57VlQbGPdfRFFZCVPGD46rmB9hFy2vUIXmZwt0bFKECXlpEA2nhf3NO25aCynZGoxNvNDMboZkye/iKEFlwiMSI2etbhIdqEL3S1TfsXDmx4a9fIKXEgLE/CkpXMbdWkK2bP87JzsXQFqI2N4Ez3ZDHzFi5tdyd0JlnZpNfeZ2o3B2exalzC94UIxo5AxVINtzDcR2w9d2kW5MdEeUsBCU1dIOqeiph1YAhmMsmjtvYcR5moEvuQoIiW6FseUKg30+E0NrR2q6kdB/x7VLHCdRVyDhSSitgInK18QP3r+bIQqaAHwx0zD24bXPUv97Aviuy5W8ADfhlQtjG17vJ7dJj7OPcEptqxsRKimhu7PzQIoWtyPYn2/SMWN0CZGR7yRJoRApZGtiYQJBTPPkXK6zPzDMgzA4YyDHTkOZyQ8BB/YqLroc6BOuydiqMhXhVxYnBYD89223QqVm+SlUMnxmE0jP1ZVSQGXjqIJ9+nd5jKUqLJjGIppm9tAVAGHeaLyALm1UQlRT5846jpzpc7/yfS9OBL36K2jqqWk0a5y0o/XQ0FCYPWtT/Ao7RL4=
+  distributions: sdist bdist_wheel
   on:
     branch: develop
