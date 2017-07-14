@@ -8,10 +8,10 @@ To configure a project to use `terrachecker` follow these steps:
  1) Install Terrachecker:
 
 ```
-pip install -e git+git@github.com:JiscRDSS/rdss-terraform-standards-checker.git@develop#egg=terrachecker
+pip install terrachecker
 ```
 
-Or simple add `git+git@github.com:JiscRDSS/rdss-terraform-standards-checker.git@develop#egg=terrachecker` to *requirements.txt* of your project.
+Or simple add `terrachecker` to *requirements.txt* of your project.
 
  2) Run Terrachecker:
 

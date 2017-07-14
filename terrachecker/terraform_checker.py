@@ -62,6 +62,20 @@ class TerraformChecker(object):
     def _validate_tf_section_names(self, file_path, hcl_obj):
         """Check that tf module, resource, variable, etc... names are valid."""
         for section, v in hcl_obj.items():
+            if section == 'output':
+                if not file_path.endswith('outputs.tf'):
+                    self._add_error(
+                        file_path,
+                        '{} should be in a file called "outputs.tf"'.format(
+                            section)
+                    )
+            if section == 'variable':
+                if not file_path.endswith('variables.tf'):
+                    self._add_error(
+                        file_path,
+                        '{} should be in a file called "variables.tf"'.format(
+                            section)
+                    )
             if section in ['resource', 'data']:
                 self._validate_tf_section_names(file_path, hcl_obj[section])
                 continue
