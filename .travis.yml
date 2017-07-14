@@ -1,20 +1,17 @@
 sudo: required
 language: python
 python:
-  - '3.6'
-
+- '3.6'
 install:
-  - make deps
-
+- make deps
 script:
-  - make lint
-  - make test
-
+- make lint
+- make test
 deploy:
   provider: pypi
-  user: MarkJisc
-  password:
-    secure: q3g/WsM//iJWLiXqxlgX0lViYDXEcUwh90x3Z3blhuLtNZRYht9J75MXEb4Tp8LESfIlabvtfJfw4/jv9WJQHMNBxMDxhYOWRD+0ZR6sSHxs4E57VlQbGPdfRFFZCVPGD46rmB9hFy2vUIXmZwt0bFKECXlpEA2nhf3NO25aCynZGoxNvNDMboZkye/iKEFlwiMSI2etbhIdqEL3S1TfsXDmx4a9fIKXEgLE/CkpXMbdWkK2bP87JzsXQFqI2N4Ez3ZDHzFi5tdyd0JlnZpNfeZ2o3B2exalzC94UIxo5AxVINtzDcR2w9d2kW5MdEeUsBCU1dIOqeiph1YAhmMsmjtvYcR5moEvuQoIiW6FseUKg30+E0NrR2q6kdB/x7VLHCdRVyDhSSitgInK18QP3r+bIQqaAHwx0zD24bXPUv97Aviuy5W8ADfhlQtjG17vJ7dJj7OPcEptqxsRKimhu7PzQIoWtyPYn2/SMWN0CZGR7yRJoRApZGtiYQJBTPPkXK6zPzDMgzA4YyDHTkOZyQ8BB/YqLroc6BOuydiqMhXhVxYnBYD89223QqVm+SlUMnxmE0jP1ZVSQGXjqIJ9+nd5jKUqLJjGIppm9tAVAGHeaLyALm1UQlRT5846jpzpc7/yfS9OBL36K2jqqWk0a5y0o/XQ0FCYPWtT/Ao7RL4=
+  user: "MarkJisc"
   distributions: sdist bdist_wheel
   on:
     branch: develop
+  password:
+    secure: gja7qPfL7A3usnDdOG3s7xDljy+1Y378vpRV2bZa+Qt4U6p3Pgo8C8ZX1EndJr6CYguVV3tqNH7QsQG5iNw94M1dINm9e1EUOlbWywTkAESNgH9aYEQStGcjY4bKeWGrN37z8AgQFQ9Z7LhgV8tF5JRtKjuj8UzVN/PuLmLYwLmLnLG/ejPUBtwn6XYotqxVrwtE9QuKY5obV4+1uB9VzbcIGFEIhfKB4URW5aNwafIcaoBzm1TIeZqMHNl5SBDAUVkOvmKoJp5XxVpECJ3DqErj/9UiyKul6JkhC77GpJM9UlJUUljbEDrsTJGuX5jckPLraTLFsE6EASryp7H1bNyigbj0rZrp0n9JAYBOyUZIVFJwl/TK2DxF/C2dwZ7Hkdla48pA7FpvyFV9L+cA44GpPAoxTwb0iwsrSKKpIGosgIp9+yjScElIZioUUYilETXMvQMtcfydecoq6tNU4zOTXgEd9PHdGqgCUgUb7NqxtyjBSikh5mJacVIqR82+miYcEDrmTm7h45JeP3qDmElpAwdeXKZYkvy8/lCD71DF0ysIKYItdXY460VChOOEifSRiX6JirXyklLf2Ys1Me7Zlu2AXl/2IdJUSwKGy1Iw03oeX6uTCx0EZHA0LZROGgKCYGNI1gg4HGVLRUJv3BdJn4/14GXStkhYC7+zdY4=
