@@ -31,7 +31,13 @@ autopep8-stats:
 test:
 	@pytest
 
+build:
+	@python setup.py sdist
+
+pypi-push:
+	@twine upload dist/*
+
 clean:
 	@find . -name '__pycache__' | xargs rm -rf
 
-.PHONY: deps* clean lint test autopep8*
+.PHONY: deps* clean lint test autopep8* build

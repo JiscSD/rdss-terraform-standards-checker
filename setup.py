@@ -5,7 +5,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='terrachecker',
-    version='0.1',
+    version='0.2',
     description='Terraform checker.',
     author='Mark Winterbottom',
     author_email='mark.winterbottom@jisc.ac.uk',
@@ -19,5 +19,7 @@ setup(
     },
     install_requires=[
         'pyhcl==0.3.5'
-    ]
+    ],
+    data_files=[('LICENSE.txt')],
+    license='Apache License 2.0'
 )
