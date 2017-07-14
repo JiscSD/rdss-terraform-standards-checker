@@ -8,7 +8,7 @@ script:
 - make lint
 - make test
 deploy:
-  provider: pypi
+  provider: pypitest
   user: "MarkJisc"
   distributions: sdist bdist_wheel
   on:
