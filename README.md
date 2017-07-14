@@ -42,3 +42,25 @@ make lint
 make autopep8
 make test
 ```
+
+### Developer FAQ
+
+ 1) How do I change the encrypted PyPi password in `.travis.yml`?
+
+The `.travis.yml` file contains an encrypted password which can be decrypted by Travis-CI when pushing to PyPi.
+
+To change this password, you will first need to install the [Travis CLI tool](https://github.com/travis-ci/travis.rb#installation).
+
+Next, login to Travis CLI using the `--pro` flag (you **must** use this flag otherwise the encrypted string you generate will be useless).
+
+```
+travis login --pro
+```
+
+From the project directory run:
+
+```
+travis encrypt '<NEW_PASSWORD>' --add deploy.password --pro
+```
+
+**Important: Remember the `--pro` flag.**
