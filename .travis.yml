@@ -7,6 +7,7 @@ install:
 script:
 - make lint
 - make test
+- make build
 deploy:
   provider: pypi
   user: MarkJisc
