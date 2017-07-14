@@ -10,9 +10,6 @@ script:
   - make lint
   - make test
 
-before_deploy:
-  - make build
-
 deploy:
   provider: pypi
   distributions: sdist bdist_wheel
