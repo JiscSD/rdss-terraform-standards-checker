@@ -9,9 +9,10 @@ script:
 - make test
 deploy:
   provider: pypi
-  user: "MarkJisc"
+  user: MarkJisc
   distributions: sdist bdist_wheel
   server: https://test.pypi.org/legacy/
   on:
     branch: develop
-  password: Awesome1
+  password:
+    secure: h4ln854c4BvD7JL9TTBEMqLkEb9ZKkUmKpSX0VfirACR451jAzOdmRXAJmmpa7OtvKF5Ls+CtEh9f9Xq2SG97IYq62yjQYs6/QfgVCYcTt4mclURlBPPyEh70QbTy0pZjPRsl5TcD7NoDdXfyKyNu+DY7R7VYLAe0vOq8JhtT7AGEnivKE2JLirld5o97zH77smw0dQi5Vm1cnVQKZg0Uk7y13PAs6UNmKki1za6AL/+bKazoClqbgwl+pX4+F0Xc0eN91uLVjlPF3nopDxRo1nw+XvaOtS49/TmKjGikAADpymC9YbZOJMX9d/P0NcSrPga3ISoamL1ERUFpSNuPewGgLemP8d55vNpN1MZRfAV+j+uNEATxxgzs+H7ye4pq9SCUANqog1sgZWiBJTNPhi7/bGhKO3TLCWgGDXvfaDGvr3o8Za3Yl/hj+AmeybchiO4Bt3PvaAV21kXjVT/Fmnw7zbHMUXOHRUMCgYrpV0a7AvhBy8Ue/YQ8R1/nf7C2TXRS3KKRkxR27YWl0oMJihD+KnhhSbPsQNlbZOR6akG4vxxe+QQ/TT0WBMR2Y8+uPA00yYF5JRCO4Bn1X5FLAx86b4zNz+D3jAyv0W3xcW9Gm+HcvjjvzzoMN9cb12929zDZR7HSeikFtQtwZHhuboj4TovZJcHjJft1HRVIOU=
