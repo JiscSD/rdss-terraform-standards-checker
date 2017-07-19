@@ -1,0 +1,6 @@
+autopep8
+pre-commit
+pyhcl
+pytest
+twine
+virtualenv

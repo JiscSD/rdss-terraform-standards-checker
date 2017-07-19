@@ -1,0 +1,18 @@
+sudo: required
+language: python
+python:
+- '3.6'
+install:
+- make deps
+script:
+- make lint
+- make test
+deploy:
+  provider: pypi
+  user: MarkJisc
+  distributions: sdist bdist_wheel
+  on:
+    tags: true
+    branch: master
+  password:
+    secure: JQf+smVLPXdIpOXrt94uTSoQeb1Pi/uOukSo3CKHXguuQAD62/Q0I54lWylZWDXLHB4wj84m8kstxQCQS0ZfeH+D/h9a2dcdjaaMTQYd6BEfzQmc2lbnC3X4mo/zn2RCnDl6RYfph2vJef2KlLh17qCYv3owK+vGEVr2+9beQr3ZQRfmziV/PNdyZkByme/saRln2MxCFEHjqruM1yWbbYYN8mglCvYNztlcRowjeNkhezjPDugX3lQQmTIj4r8ms6x5Z5xz12XTrdrySXuFLBsZl/tLCfa6DMdJJyQ63VhOpa1Kue+6AxvtmmZE2p0B1kIhNwlZ51PpfUo86fkQANe3VGrsG0Th2UgC4ieTopleKNfaPgNgZUh/R7ivymlL5MSgeonsplaWX38cyoVpJlx2+qEr2hnCalyJ4grJSLeBDzAcYTElW65isnWveov2ejZQBz3iE9g0P5mcC7vMWxk6FKkSv5zd1IUDmSmepCAaMTIEFNoJzu0MD9NHcewXpvOgws29c4ofaJ4xwUh0pT3CzL8mmBLUS9x8khjyp3os35YbmW8CA1lNbmRQMckpiDx7IBhT+RoqPdTtWcDrvDEQaYrCWECKF62WsztPWrs3kYEngfbe3bS5gdiwYpkVUFCKuYFj+eQzayWvV/6WweOJaOLJVNtd7gdCma6ub14=
